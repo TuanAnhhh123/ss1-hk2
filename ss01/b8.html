@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insert Array At Position</title>
+  </head>
+  <body>
+    <div id="result"></div>
+
+    <script>
+      function insertArrayAt(arr1, arr2, index) {
+        let part1 = arr1.slice(0, index);
+        let part2 = arr1.slice(index);
+
+        return part1.concat(arr2, part2);
+      }
+
+      let array1 = [1, 2, "a", 6, 7];
+
+      let array2 = ["b", "hai"];
+
+      let index = 2;
+
+      let result = insertArrayAt(array1, array2, index);
+
+      document.getElementById("result").innerHTML =
+        "<h2>Kết quả:</h2>" + result.join(", ");
+    </script>
+  </body>
+</html>

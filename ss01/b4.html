@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find Book by ID</title>
+  </head>
+  <body>
+    <div id="searchResult"></div>
+
+    <script>
+      let books = [
+        { id: 1, name: "Book 1" },
+        { id: 2, name: "Book 2" },
+        { id: 3, name: "Book 3" },
+      ];
+
+      function findBookById(id) {
+        let foundBook = books.find((book) => book.id === id);
+        if (foundBook) {
+          return (
+            "Found Book:<br>ID: " + foundBook.id + "<br>Name: " + foundBook.name
+          );
+        } else {
+          return "No book found with the given ID.";
+        }
+      }
+
+      let result1 = findBookById(2);
+
+      let result2 = findBookById(4);
+
+      document.getElementById("searchResult").innerHTML =
+        "<h2>Search Result:</h2>" + result1 + "<br>" + result2;
+    </script>
+  </body>
+</html>

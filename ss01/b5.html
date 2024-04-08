@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Account Validation</title>
+  </head>
+  <body>
+    <div id="result"></div>
+
+    <script>
+      let accounts = [
+        { userName: "user1", password: "pass word" },
+        { userName: "user2", password: "password1" },
+        { userName: "user3", password: "password2" },
+      ];
+
+
+      function containsWhiteSpace(str) {
+        return /\s/.test(str);
+      }
+
+      function checkAccounts() {
+        let validAccounts = [];
+
+        accounts.forEach((account, index) => {
+          if (containsWhiteSpace(account.password)) {
+            document.getElementById("result").innerHTML +=
+              "Invalid account at index " + index + "<br>";
+          } else {
+            validAccounts.push(account);
+          }
+        });
+
+        if (validAccounts.length === 0) {
+          document.getElementById("result").innerHTML +=
+            "No valid accounts found.";
+        } else {
+          document.getElementById("result").innerHTML += "Valid accounts:<br>";
+          validAccounts.forEach((account) => {
+            document.getElementById("result").innerHTML +=
+              "Username: " +
+              account.userName +
+              ", Password: " +
+              account.password +
+              "<br>";
+          });
+        }
+      }
+
+      checkAccounts();
+    </script>
+  </body>
+</html>

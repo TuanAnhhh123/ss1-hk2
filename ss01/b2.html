@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modified Classes</title>
+  </head>
+  <body>
+    <div id="modifiedClasses"></div>
+
+    <script>
+      let classes = [
+        { id: 1, number: 25 },
+        { id: 2, number: 30 },
+        { id: 3, number: 50 },
+      ];
+      let modifiedClasses = classes.map((clazz) => {
+        if (clazz.number < 30) {
+          return { id: clazz.id, number: clazz.number + 10 };
+        } else if (clazz.number > 40) {
+          return { id: clazz.id, number: clazz.number - 10 };
+        } else {
+          return { id: clazz.id, number: clazz.number };
+        }
+      });
+      let modifiedClassesHTML = "<h2>Modified Classes:</h2>";
+      modifiedClasses.forEach((clazz) => {
+        modifiedClassesHTML +=
+          "<p>Class ID: " +
+          clazz.id +
+          ", Number of Students: " +
+          clazz.number +
+          "</p>";
+      });
+      document.getElementById("modifiedClasses").innerHTML =
+        modifiedClassesHTML;
+    </script>
+  </body>
+</html>

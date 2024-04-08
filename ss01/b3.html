@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Positive Integers</title>
+  </head>
+  <body>
+    <div id="positiveIntegers"></div>
+
+    <script>
+      let arr = [1, 2, "z", true, -1, -3];
+
+
+      let positiveIntegers = arr.filter((item) => {
+        return Number.isInteger(item) && item > 0;
+      });
+
+      let positiveIntegersHTML = "<h2>Positive Integers:</h2>";
+      positiveIntegersHTML += "<p>" + positiveIntegers.join(", ") + "</p>";
+
+      document.getElementById("positiveIntegers").innerHTML =
+        positiveIntegersHTML;
+    </script>
+  </body>
+</html>
